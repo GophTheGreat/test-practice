@@ -114,6 +114,51 @@ function caesarCipher(string, factor){
   }
 }
 
-caesarCipher("b", -2);
+//average, min, max, and length.
 
-module.exports = {capitalize, reverseString, Calculator, caesarCipher};
+function analyzeArray(array){
+  let analysis = {
+    average: "",
+    min: "",
+    max: "",
+    length: ""
+  }
+  array
+  console.log(array[0])
+
+  //calculate average
+  let average = 0;
+  for(let i = 0; i < array.length; i++){
+    average += array[i];
+    average
+  }
+  average = Math.round(average / array.length)
+  analysis.average = average;
+
+  //calculate min
+  let min = array[0]
+  for(let i = 0; i < array.length; i++){
+    if(array[i] < min){
+      min = array[i];
+    }
+  }
+  analysis.min = min;
+
+  //calculate max
+  let max = array[0]
+  for(let i = 0; i < array.length; i++){
+    if(array[i] > max){
+      max = array[i];
+    }
+  }
+  analysis.max = max;
+  
+  //calculate length
+  analysis.length = array.length;
+  console.log(analysis);
+  return analysis;
+}
+
+analyzeArray([1,1,1,1,5])
+
+module.exports = {capitalize, reverseString, Calculator, caesarCipher, analyzeArray};
